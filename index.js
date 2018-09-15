@@ -21,49 +21,6 @@ client.on('message', message => {
 
     }
 
-});
-
-bot.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'accueil');
-    let memberavatar = member.user.avatarURL
-        if (!channel) return;
-        let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField(':bust_in_silhouette: | Pseudo : ', `${member}`)
-        .addField(':microphone2: | Bienvenue !', `Bienvenue, ${member}`)
-        .addField(':id: | User :', "**[" + `${member.id}` + "]**")
-        .addField(':family_mwgb: | Tu es le Gaulois', `${member.guild.memberCount}`)
-        .setFooter(`**${member.guild.name}**`)
-        .setTimestamp()
-
-        channel.sendEmbed(embed);
-});
-
-bot.on('guildMemberAdd', member => {
-
-    console.log(`${member}`, "has joined" + `${member.guild.name}`)
-
-});
-
-bot.on('guildMemberRemove', member => {
-    let channel = member.guild.channels.find('name', 'accueil');
-    let memberavatar = member.user.avatarURL
-        if (!channel) return;
-        let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField('Pseudo:', `${member}`)
-        .addField('A quitté le serveur', ';(')
-        .addField('Aure voir!')
-        .addField('Le serveur compte maintenant', `${member.guild.memberCount}` + " Gaulois !")
-        .setFooter(`**${member.guild.name}`)
-        .setTimestamp()
-
-        channel.sendEmbed(embed);
-});
-
-
     if(message.content.startsWith(prefix + "mute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission !");
  

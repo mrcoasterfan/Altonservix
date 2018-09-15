@@ -21,58 +21,6 @@ client.on('message', message => {
 
     }
 
-    if(message.content.startsWith(prefix + "mute")) {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission !");
- 
-        if(message.mentions.users.size === 0) {
-            return message.channel.send('Vous devez mentionner un Gaulois !');
-        }
- 
-        var mute = message.guild.member(message.mentions.users.first());
-        if(!mute) {
-            return message.channel.send("Je n'ai pas trouvé le Gaulois !");
-        }
- 
-        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas la permission !");
-        message.channel.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
-            message.channel.send(`Atonservix, ${mute.user.username} est mute !`);
-        })
-    }
-    
-        if(message.content.startsWith(prefix + "unmute")) {
-
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission !");
-
- 
-
-        if(message.mentions.users.size === 0) {
-
-            return message.channel.send('Vous devez mentionner un Gaulois !');
-
-        }
-
- 
-
-        var mute = message.guild.member(message.mentions.users.first());
-
-        if(!mute) {
-
-            return message.channel.send("Je n'ai pas trouvé le Gaulois !");
-
-        }
-
- 
-
-        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas la permission !");
-
-        message.channel.overwritePermissions(mute, { SEND_MESSAGES: true}).then(member => {
-
-            message.channel.send(`Atonservix, ${mute.user.username} est unmute !`);
-
-        })
-
-    }
-
     if(message.content === prefix + "aide"){
         var help_embed = new Discord.RichEmbed()
         .setColor("#FFCC33") 
@@ -98,27 +46,6 @@ client.on('message', message => {
         .addField("Nombre de catégories et de salons:", message.guild.channels.size)
         .setFooter("Version 1.0")
         message.channel.sendMessage(info_embed)
-
-   
-    }
-
-    if(message.content.startsWith(prefix + "cesar")) {
-
-        var cesar = [
-
-            "https://media.giphy.com/media/uADDNikKUQHhgUDuDC/giphy.gif",
-            "https://media.giphy.com/media/3o7abAHdYvZdBNnGZq/giphy.gif",
-            "https://media.giphy.com/media/3ohzdQhmr2YrxHT45y/giphy.gif"
-        ];
-
-        var gif = cesar[Math.floor(Math.random() * cesar.length)];
-
-        var cesar_embed = new Discord.RichEmbed
-        .setColor('RANDOM')
-        .setTitle(':thumbsup:')
-        .setImage(gif)
-        .setFooter('Version 1.0')
-        message.channel.send(cesar_embed);
 
     }
     

@@ -46,29 +46,6 @@ client.on('message', message => {
         .addField("Nombre de catégories et de salons:", message.guild.channels.size)
         .setFooter("Version 1.0")
         message.channel.sendMessage(info_embed)
-
-    }
-
-    if(message.content.startsWith(prefix + "kick")) {
-        if (!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permission !";)
-
-        if(message.mentions.users.size === 0) {
-            return message.channel.send("Vous devez mentionner un Gaulois !")
-        }
-
-        var kick = message.guild.member(message.mentions.users.first());
-        if(!kick) {
-            return message.channel.send("L'utilisateur est innexistant")
-        }
-
-        if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
-            return message.channel.send("Je n'ai pas la permission de faire ceci...");
-        }
-
-        kick.kick().then(member => {
-            message.channel.send("Atonservix !")
-            message.channel.send(`${member.user.username} a été viré par ${message.author.username} !`);
-        });
     
     if(message.content === prefix + "plan"){
         message.reply("Atonservix ! :robot:")

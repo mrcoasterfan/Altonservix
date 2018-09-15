@@ -21,6 +21,14 @@ client.on('message', message => {
 
     }
 
+    client.on('message', message => {
+
+        if(message.content === ":thiking:"){
+            message.reply(":yum: ");
+            console.log('Le bot dit bonjour');
+
+        }
+
     if(message.content.startsWith(prefix + "mute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission !");
  

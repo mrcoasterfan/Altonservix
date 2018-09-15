@@ -15,7 +15,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
 
-    if(message.content === "..."){
+    if(message.content === "Bonjour"){
         message.reply(":yum:");
         console.log('Le bot dit bonjour');
 

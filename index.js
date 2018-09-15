@@ -62,6 +62,7 @@ client.on('message', message => {
         .setColor("#FFCC33") 
         .setTitle("Atonservix ! :robot:")
         .setDescription("Voici toutes les commandes:")
+        .setThumbnail(message.author.avatarURL)
         .addField("!aide", "Affiche toutes les commandes pour t'aider.")
         .addField("!plan", "Affiche le plan pour te guider dans le parc.")
         .addField("!news", "Soyez au courrant de toutes les nouveautés.")

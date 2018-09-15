@@ -25,17 +25,35 @@ client.on('message', message => {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission !");
  
         if(message.mentions.users.size === 0) {
-            return message.channel.send('Vous devez mentionner un utilisateur !');
+            return message.channel.send('Vous devez mentionner un Gaulois !');
         }
  
         var mute = message.guild.member(message.mentions.users.first());
         if(!mute) {
-            return message.channel.send("Je n'ai pas trouvé l'utilisateur ou il l'existe pas !");
+            return message.channel.send("L'utilisateur est innexistant !");
         }
  
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas la permission !");
         message.channel.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
-            message.channel.send(`${mute.user.username} est mute !`);
+            message.channel.send(`Atonservix, ${mute.user.username} est mute !`);
+        })
+    }
+
+    if(message.content.startsWith(prefix + "unmute")) {
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission !");
+ 
+        if(message.mentions.users.size === 0) {
+            return message.channel.send('Vous devez mentionner un Gaulois !');
+        }
+ 
+        var mute = message.guild.member(message.mentions.users.first());
+        if(!mute) {
+            return message.channel.send("L'utilisateur est innexistant !");
+        }
+ 
+        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas la permission !");
+        message.channel.overwritePermissions(mute, { SEND_MESSAGES: true}).then(member => {
+            message.channel.send(`Atonservix, ${mute.user.username} est unmute !`);
         })
     }
 

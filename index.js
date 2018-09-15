@@ -15,13 +15,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
 
-    if(message.content === "Bonjour"){
-        message.reply("Salut");
-        console.log('Le bot dit bonjour');
-
-client.on('message', message => {
-
-    if(message.content === ":thiking:"){
+    if(message.content === ":thiking"){
         message.reply(":yum:");
         console.log('Le bot dit bonjour');
 

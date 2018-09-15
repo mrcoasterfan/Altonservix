@@ -46,6 +46,8 @@ client.on('message', message => {
         .addField("Nombre de catégories et de salons:", message.guild.channels.size)
         .setFooter("Version 1.0")
         message.channel.sendMessage(info_embed)
+
+    }
     
     if(message.content === prefix + "plan"){
         message.reply("Atonservix ! :robot:")

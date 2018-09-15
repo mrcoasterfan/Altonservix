@@ -9,7 +9,7 @@ client.login("NDQ3NzUxMzY0NzY1MDI0MjU3.DnzUcA.RvAu_pOQeoKYrvSe7c6JNqNytlY");
 
 client.on("ready", () => {
     console.log("Je suis prêt !")
-    client.user.setGame("Peur sur le Parc")
+    client.user.setGame("PEUR SUR LE PARC")
 });
 
 

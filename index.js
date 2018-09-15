@@ -30,7 +30,7 @@ client.on('message', message => {
  
         var mute = message.guild.member(message.mentions.users.first());
         if(!mute) {
-            return message.channel.send("L'utilisateur est innexistant !");
+            return message.channel.send("Le Gaulois est innexistant !");
         }
  
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas la permission !");
@@ -48,7 +48,7 @@ client.on('message', message => {
  
         var mute = message.guild.member(message.mentions.users.first());
         if(!mute) {
-            return message.channel.send("L'utilisateur est innexistant !");
+            return message.channel.send("Le Gaulois est innexistant !");
         }
  
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")) return message.channel.send("Je n'ai pas la permission !");

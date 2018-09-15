@@ -99,6 +99,27 @@ client.on('message', message => {
         .setFooter("Version 1.0")
         message.channel.sendMessage(info_embed)
 
+   
+    }
+
+    if(message.content.startsWith(prefix + "cesar")) {
+
+        var cesar = [
+
+            "https://media.giphy.com/media/uADDNikKUQHhgUDuDC/giphy.gif",
+            "https://media.giphy.com/media/3o7abAHdYvZdBNnGZq/giphy.gif",
+            "https://media.giphy.com/media/3ohzdQhmr2YrxHT45y/giphy.gif"
+        ];
+
+        var gif = cesar[Math.floor(Math.random() * cesar.length)];
+
+        var cesar_embed = new Discord.RichEmbed
+        .setColor('RANDOM')
+        .setTitle(':thumbsup:')
+        .setImage(gif)
+        .setFooter('Version 1.0')
+        message.channel.send(cesar_embed);
+
     }
     
     if(message.content === prefix + "plan"){
